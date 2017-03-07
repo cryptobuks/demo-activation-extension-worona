@@ -1,7 +1,12 @@
+/* eslint-disable no-console */
 import { takeEvery } from 'redux-saga';
-import { put } from 'redux-saga/effects';
+import { put, fork } from 'redux-saga/effects';
 import * as deps from '../deps';
 import pkgJson from '../../../package.json'; // Remove this line and enter the pkgJson.name manually.
+
+export function log() {
+  console.log('Demo sagas activated successfully.');
+}
 
 export function* saveDefaults(action) {
   yield put(deps.actions.saveSettingsRequested({
@@ -17,5 +22,6 @@ export default function* testSagas() {
     takeEvery(action => action.type === deps.types.DEFAULT_SETTINGS_NEEDED
       && action.name === pkgJson.name,
       saveDefaults),
+    fork(log),
   ];
 }
