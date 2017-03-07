@@ -1,19 +1,21 @@
 {
-  "name": "package-development-worona",
+  "name": "demo-activation-extension-worona",
   "version": "1.0.0",
-  "description": "Boilerplate to create Worona packages",
+  "description": "This extension which doesn't do anything. It's just to play with activation and deactivation.",
   "scripts": {
     "start": "node node_modules/worona-packages/dist/start.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/worona/package-development-worona.git"
+    "url": "git+https://github.com/worona/demo-activation-extension-worona.git"
   },
   "keywords": [
+    "extension",
+    "demo",
     "worona",
     "package"
   ],
-  "author": "",
+  "author": "luis@worona.org",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
@@ -22,6 +24,44 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
-    "worona-packages": "1.3.8"
+    "vendors-app-worona": "1.4.2",
+    "vendors-dashboard-worona": "1.3.6",
+    "worona-packages": "1.3.12"
+  },
+  "bugs": {
+    "url": "https://github.com/worona/demo-activation-extension-worona/issues"
+  },
+  "homepage": "https://github.com/worona/demo-activation-extension-worona#readme",
+  "worona": {
+    "authors": [
+      "luis@worona.org"
+    ],
+    "private": false,
+    "dashboard": {
+      "type": "extension",
+      "namespace": "demoActivation",
+      "menu": {
+        "app": {
+          "niceName": "Demo Activation",
+          "category": "Extensions",
+          "order": 80
+        },
+        "fbia": {
+          "niceName": "Demo Activation",
+          "category": "Extensions",
+          "order": 80
+        },
+        "amp": {
+          "niceName": "Demo Activation",
+          "category": "Extensions",
+          "order": 80
+        }
+      }
+    },
+    "app": {
+      "type": "extension",
+      "namespace": "demoActivation",
+      "listed": false
+    }
   }
 }
